@@ -2,6 +2,7 @@ import express from 'express';
 
 import config from './config/config.js';
 import userRoute from './routes/user.route.js';
+import authRoute from './routes/auth.route.js';
 import connectDB from './config/db.js';
 import bodyParser from 'body-parser';
 
@@ -16,6 +17,7 @@ app.get('/', (req, res) => {
 });
 
 app.use('/api/users', userRoute);
+app.use('/api/auth', authRoute);
 
 app.get('/about', (req, res) => {
     res.send('This is the about page');
