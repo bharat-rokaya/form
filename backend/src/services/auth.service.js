@@ -2,7 +2,7 @@ import User from '../models/User.js';
 import bcrypt from 'bcrypt';
 
 const login = async(data) => {
-    const user = await User.findOne({email: data.email});
+    const user = await User.findOne({$or: [{username: data.username}, {email: data.email}]});
 
     if(!user) {
         throw {
