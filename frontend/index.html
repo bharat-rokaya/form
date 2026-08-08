@@ -6,6 +6,13 @@
     <title>Login Form</title>
 </head>
 <body>
-
+    <div>
+        <h1>Welcome</h1>
+        <h2>Username:<span id="username"></span></h2>
+    </div>
+    <script>
+        const username = localStorage.getItem('username');
+        document.getElementById('username').textContent = username;
+    </script>
 </body>
 </html>

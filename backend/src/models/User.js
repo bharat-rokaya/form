@@ -18,7 +18,12 @@ const userSchema = new mongoose.Schema({
         required: [true, 'Password is required'],
         minLength: [6, 'Password must be 6 characters long'],
         maxLength: [100, 'Password must be less than 100 characters'],
+    },
+    isAdmin: {
+            type: Boolean,
+            default: false,
     }
 });
+
 
 export default mongoose.model("User", userSchema); 
